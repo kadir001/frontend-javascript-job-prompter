@@ -71,7 +71,7 @@ const departments = {
     }
 }
 
-
+console.log(departments);
 
 const userInput = prompt(
     "Over welke afdeling wil je meer informatie? Kies uit: [marketing / sales / customer-service]"
@@ -91,7 +91,7 @@ if (userInput === "marketing") {
 
 console.log(userInput);
 
-console.log(departments);
+
 
 // Opdracht 1a
 console.log(
@@ -112,3 +112,35 @@ console.log(
 console.log(
     `Sales is een uitdagende afdeling om te werken als Verkoopmanager. ${departments.sales.jobs[1].description}`
 );
+
+
+//Opdracht 3
+const functionChoice = prompt(
+    `Je koos marketing. Over welke functie wil je meer weten? Voer een getal tussen 0 en 3 in.
+0: ${departments.marketing.jobs[0].title}
+1: ${departments.marketing.jobs[1].title}
+2: ${departments.marketing.jobs[2].title}
+3: ${departments.marketing.jobs[3].title}`
+);
+
+if (functionChoice === "0") {
+    console.log(
+        `Je koos ${departments.marketing.jobs[0].title}. Een uitdagende rol! ${departments.marketing.jobs[0].description}`
+    );
+} else if (functionChoice === "1") {
+    console.log(
+        `Je koos ${departments.marketing.jobs[1].title}. Een uitdagende rol! ${departments.marketing.jobs[1].description}`
+    );
+} else if (functionChoice === "2") {
+    console.log(
+        `Je koos ${departments.marketing.jobs[2].title}. Een uitdagende rol! ${departments.marketing.jobs[2].description}`
+    );
+} else if (functionChoice === "3") {
+    console.log(
+        `Je koos ${departments.marketing.jobs[3].title}. Een uitdagende rol! ${departments.marketing.jobs[3].description}`
+    );
+} else {
+    console.error(
+        "Ongeldige keuze. Probeer het opnieuw door de pagina te verversen."
+    );
+}
