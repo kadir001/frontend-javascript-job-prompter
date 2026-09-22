@@ -81,9 +81,8 @@ if (
     userInput === "sales" ||
     userInput === "customer-service"
 ) {
-    console.log(
-        `${userInput} is een leuke afdeling om te werken. Er werken op dit moment ${departments[userInput].numberOfEmployees} medewerkers.`
-    );
+    document.getElementById("department-description").textContent =
+        departments[userInput].description;
 
     const functionChoice = prompt(
         `Je koos ${userInput}. Over welke functie wil je meer weten? Voer een getal tussen 0 en 3 in.
@@ -94,28 +93,39 @@ if (
     );
 
     if (functionChoice === "0") {
-        console.log(
-            `Je koos ${departments[userInput].jobs[0].title}. Een uitdagende rol! ${departments[userInput].jobs[0].description}`
-        );
+        document.getElementById("role-title").textContent =
+            departments[userInput].jobs[0].title;
+
+        document.getElementById("role-description").textContent =
+            departments[userInput].jobs[0].description;
+
     } else if (functionChoice === "1") {
-        console.log(
-            `Je koos ${departments[userInput].jobs[1].title}. Een uitdagende rol! ${departments[userInput].jobs[1].description}`
-        );
+        document.getElementById("role-title").textContent =
+            departments[userInput].jobs[1].title;
+
+        document.getElementById("role-description").textContent =
+            departments[userInput].jobs[1].description;
+
     } else if (functionChoice === "2") {
-        console.log(
-            `Je koos ${departments[userInput].jobs[2].title}. Een uitdagende rol! ${departments[userInput].jobs[2].description}`
-        );
+        document.getElementById("role-title").textContent =
+            departments[userInput].jobs[2].title;
+
+        document.getElementById("role-description").textContent =
+            departments[userInput].jobs[2].description;
+
     } else if (functionChoice === "3") {
-        console.log(
-            `Je koos ${departments[userInput].jobs[3].title}. Een uitdagende rol! ${departments[userInput].jobs[3].description}`
-        );
+        document.getElementById("role-title").textContent =
+            departments[userInput].jobs[3].title;
+
+        document.getElementById("role-description").textContent =
+            departments[userInput].jobs[3].description;
+
     } else {
-        console.error(
-            "Ongeldige keuze. Probeer het opnieuw door de pagina te verversen."
-        );
+        document.getElementById("error-message").textContent =
+            "Ongeldige keuze. Probeer het opnieuw door de pagina te verversen.";
     }
+
 } else {
-    console.error(
-        "Ongeldige keuze. Probeer het opnieuw door de pagina te verversen."
-    );
+    document.getElementById("error-message").textContent =
+        "Ongeldige keuze. Probeer het opnieuw door de pagina te verversen.";
 }
