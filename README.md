@@ -9,6 +9,8 @@ functies binnen hun bedrijf. _Automatiseren kun je leren!_ Om de informatie zo g
 input van de gebruiker vragen om zo informatie over de juiste afdeling en functie te verschaffen. Dit doe je op basis
 van de grote dataverzameling aan bedrijfsinformatie genaamd `departments` (te vinden in `main.js`).
 
+![screen-gif-prompter.gif](assets/screen-gif-prompter.gif)
+
 ## Voor je begint
 
 1. Koppel het script aan de HTML-pagina door onderaan de body de volgende tag te
@@ -28,7 +30,7 @@ van de grote dataverzameling aan bedrijfsinformatie genaamd `departments` (te vi
   Marketing is een leuke afdeling om te werken. [beschrijving]."*
 * **Opdracht 1c:** Log het aantal medewerkers van de customer-service-afdeling in de console, in het volgende format: *"De afdeling Customer Service heeft [aantal] medewerkers"* Let op: er is iets raars aan de hand met deze property!
 * **Opdracht 1d:** Log de beschrijving van de functie "Verkoopmanager" in de console, in het volgende format: *"Sales is
-  een uitdagende afdeling om te werken als Verkoopmanager. [beschrijving]"*
+  een uitdagende afdeling om te werken als Verkoopmanager. [beschrijving functie Verkoopmanager]"*
 
 ### Opdracht 2 - prompten en beslissen
 
@@ -41,18 +43,18 @@ console.log(userInput);
 ```
 
 * **Opdracht 2a:** Gebruik bovenstaand voorbeeld en pas het zo aan dat de browser jou de volgende vraag
-  stelt: `Over welke afdeling wil je meer informatie? Kies uit: [Marketing / Sales / Customer Service]`. Het antwoord
+  stelt: `Over welke afdeling wil je meer informatie? Kies uit: [marketing / sales / customer-service]`. Het antwoord
   dat jij invoert, log je uiteraard in de console. *Tip*: geef jouw input-prompt altijd in kleine letters ("marketing"
   in plaats van "Marketing" of "MARKETING"), dit voorkomt problemen in het script.
 
 * **Opdracht 2b:** tijd voor het echte werk! Op basis van wat de gebruiker invoert ("marketing", "sales" of "customer
-  service") willen wij een beschrijving van die afdeling in de console loggen. Dit doe je in het volgende format:
+  service") willen wij een beschrijving van die afdeling in de console loggen. Hiervoor typ je natuurlijk niet handmatig de beschrijvingen over! Je spreekt ze aan via het `departments`-object: hiervoor zul je dus een *beslissingsstructuur* moeten bouwen. Ongeacht de gekozen afdeling, log je de uitkomst in het volgende format: 
   *"Je koos [ingevoerde keuze]. [beschrijving afdeling]"*
-  Hiervoor typ je natuurlijk niet handmatig de beschrijvingen over. Je spreekt ze aan via het `departments`-object.
+  
 * **Opdracht 2c:** test of alles werkt door alle mogelijke afdelingen een keertje te voeren en te checken of je de
   gewenste output krijgt. Maak jouw beslisboom nu extra gebruiksvriendelijk door de melding *"Ongeldige keuze. Probeer
   het opnieuw door de pagina te verversen."* in de console te laten zien wanneer de gebruiker een spelfout maakt of iets
-  verkeerds invoert.
+  verkeerds invoert. *Tip:* je kunt hiervoor `console.error()` gebruiken in plaats van `console.log()`.
 
 ### Opdracht 3 - een nieuwe prompt
 
@@ -65,26 +67,25 @@ we hebben deze code straks weer nodig, maar we gaan ons nu even richten op het p
 
   ```shell
   Je koos marketing. Over welke functie wil je meer weten? Voer een getal tussen 0 en 3 in.
-  0: [functietitel marketing x],
-  1: [functietitel marketing x],
-  2: [functietitel marketing x],
-  3: [functietitel marketing x]
+  0: [functietitel marketing 0],
+  1: [functietitel marketing 1],
+  2: [functietitel marketing 2],
+  3: [functietitel marketing 3]
   ```
 
-  Hierbij typ je de functietitels van Marketing niet handmatig over, maar spreek je ze aan via het `departments`-object.
+  Hierbij typ je de functietitels van Marketing niet handmatig over, maar spreek je ze aan via de `marketing`-property in het `departments`-object.
 
-* **Opdracht 3b:** Op basis van wat de gebruiker invoert (0, 1, 2, of 3) willen wij de beschrijving van de bijbehorende
+* **Opdracht 3b:** Op basis van wat de gebruiker invoert (`0`, `1`, `2`, of `3`) willen wij de beschrijving van de bijbehorende
   marketing-functie-titel en marketing-functie-beschrijving in de console loggen. Dit doe je in het volgende format:
  
   *"Je koos [titel ingevoerde marketing functie]. Een uitdagende rol! [beschrijving ingevoerde marketing functie]"*
 
-  *Tip:* houdt er rekening mee dat ondanks dat de gebruiker een getal invoert, dit altijd terugkomt als de string-versie
-  van dat getal. `3` is namelijk iets anders dan `"3"`
+  Hiervoor zul je dus een beslissingsstructuur moeten bouwen. *Tip:* houdt er rekening mee dat ondanks dat de gebruiker een getal invoert, dit vanuit een prompt altijd terugkomt als de string-versie van dat getal. `3` is namelijk iets anders dan `"3"`
 
 * **Opdracht 3c:** test of alles werkt door alle mogelijke getallen een keertje te voeren in de prompt en te checken of
   je de gewenste output krijgt. Maak jouw beslisboom nu extra gebruiksvriendelijk door de melding *"Ongeldige keuze.
   Probeer het opnieuw door de pagina te verversen."* in de console te laten zien wanneer de gebruiker iets anders
-  invoert dan 0 - 3. Tip: je kunt hiervoor `console.error()` gebruiken in plaats van `console.log`.
+  invoert dan 0 - 3.
 
 ### Opdracht 4 - samenvoegen
 
@@ -93,7 +94,7 @@ we gebruiken in de tweede prompt afkomstig is van de input uit de *eerste* promp
 uit opdracht 3 dus gaan vervangen door de *input* uit opdracht 2...
 
 * **Opdracht 4a:** Zet alle code uit opdracht 2 weer aan. Comment de code uit opdracht 3 uit. Log de
-  afdeling-beschrijving van de *ingevoerde afdeling uit de prompt* in de console, in het volgende format:
+  afdeling-beschrijving van de ingevoerde afdeling uit de eerste prompt in de console, in het volgende format:
   *"[afdeling-naam] is een leuke afdeling om te werken. Er werken op dit moment [aantal] medewerkers."*
   Tip: gebruik hiervoor de blokhaak notatie.
   Bekijk [hier](https://bobbyhadz.com/blog/javascript-get-object-value-by-variable-key) een voorbeeld van het gebruik
@@ -107,6 +108,9 @@ uit opdracht 3 dus gaan vervangen door de *input* uit opdracht 2...
   `1: [functietitel afdeling x],  `
   `2: [functietitel afdeling x], `
   `3: [functietitel afdeling x]`
+
+* **Opdracht 4c:** Doe dit vervolgens ook voor de beslisboom. In plaats van overal hardcoded de afdeling 'marketing' te gebruiken, zorg je dat de afdeling-naam gebruikt wordt die de gebruiker heeft ingevoerd. Dus als de gebruiker eerst 'sales' koos en daarna '2', krijgt de gebruiker informatie over de functie Verkoopmanager te zien.
+
 
 ### Opdracht 5 - bonus
 
@@ -129,9 +133,7 @@ maar eens kijken in `index.html`: hierin zie je in totaal vier lege elementen st
   komt te staan. En nu je toch bezig bent kun je ook eens proberen één van de andere tags te vullen met jouw
   lievelingseten. Lukt dat? Comment het dan weer uit, want je zult het op een andere manier gaan toepassen.
 
-* **Opdracht 5b:** Vervang alle plekken waar je console.log's hebt gebruikt om output weer te geven door statements die
-  ervoor zorgen dat diezelfde tekst in één van de elementen op de pagina komt te staan. Indien de gebruiker "marketing"
-  en "0" heeft ingevoerd, wordt het volgende weergegeven op de pagina:
+* **Opdracht 5b:** Voeg op alle plekken waar je console.log's hebt gebruikt deze statements toe om output weer te geven in de juiste elementen. Indien de gebruiker "marketing" en "0" heeft ingevoerd, wordt het volgende weergegeven op de pagina:
 
 ```html
 
